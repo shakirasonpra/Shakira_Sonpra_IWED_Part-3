@@ -62,11 +62,11 @@ body{
 .nav a{
   color:#333;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;
   background-color: pea;
-}
+}@media (min-width:1100px){ 
 .mobile-nav{display:none;
            text-decoration:none;
            color:#333;
-           text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;}
+           text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;}}
 .nav a:hover{background:rgba(217,107,92,0.08)}
 /*footer*/
 /* Footer Section */
@@ -263,4 +263,5 @@ textarea{resize:vertical;min-height:90px}
   }
   .mobile-nav a{display:block;padding:8px 10px}
 }
+
 
