@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pastries — Pancake Pastries</title>
+  <meta name="description" content="Browse our selection of croissants, tarts, danishes and more. Order online for collection or delivery." />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-+Y6V0Uy1Ik5+pUvNbK/CtYFQki71R+xVQ1BM8DT6vKrrO5gkP7FpC18JNpDutLCRaPV1oDttxyPjdJawxKuB1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header class="container header">
+    <a class="brand" href="index.html"><div class="logo">SP</div><div><div style="font-weight:800">Pancake Pastries</div><div style="font-size:12px;color:var(--muted)">artisan bakery</div></div></a>
+    <nav class="nav"><a href="index.html">Home</a><a href="products_services.html">Pastries</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <button class="menu-toggle"><i class="fa fa-bars"></i></button>
+    
+  </header>
+
+  <main class="container">
+    <section class="hero-pastry">
+      <h1 style="margin-top:0">Our pastries</h1>
+      <p class="text-muted">Explore our rotating menu — everything is handmade in small batches. Click "Order" to request an order.</p>
+    </section>
+
+    <section>
+      <div class="grid">
+
+    <!-- 1. Croissant -->
+    <div class="card">
+        <img src="https://images.pexels.com/photos/792404/pexels-photo-792404.jpeg" alt="Butter Croissant">
+        <div class="card-body">
+            <h3>Butter Croissant</h3>
+            <p>Flaky, golden, and baked fresh every morning with premium butter.</p>
+            <div class="meta">
+                <span class="price">R25</span>
+                <button class="order-btn order-btn-js">Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Chocolate Donut -->
+    <div class="card">
+        <img src="https://images.pexels.com/photos/10538803/pexels-photo-10538803.jpeg" alt="Chocolate Donut">
+        <div class="card-body">
+            <h3>Chocolate Donut</h3>
+            <p>Soft donut dipped in a rich chocolate glaze and topped with sprinkles.</p>
+            <div class="meta">
+                <span class="price">R18</span>
+                <button class="order-btn order-btn-js">Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Cream Cupcake -->
+    <div class="card">
+        <img src="https://images.pexels.com/photos/7525116/pexels-photo-7525116.jpeg" alt="Vanilla Cupcake">
+        <div class="card-body">
+            <h3>Vanilla Cream Cupcake</h3>
+            <p>Moist vanilla sponge with silky whipped cream frosting.</p>
+            <div class="meta">
+                <span class="price">R22</span>
+                <button class="order-btn order-btn-js">Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Strawberry Tart -->
+    <div class="card">
+        <img src="https://images.pexels.com/photos/28826870/pexels-photo-28826870.jpeg" alt="Strawberry Tart">
+        <div class="card-body">
+            <h3>Strawberry Tart</h3>
+            <p>Crispy tart shell filled with custard and topped with fresh strawberries.</p>
+            <div class="meta">
+                <span class="price">R35</span>
+                <button class="order-btn order-btn-js">Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Cinnamon Roll -->
+    <div class="card">
+        <img src="https://images.pexels.com/photos/19859346/pexels-photo-19859346.jpeg" alt="Cinnamon Roll">
+        <div class="card-body">
+            <h3>Cinnamon Roll</h3>
+            <p>Warm gooey cinnamon swirl topped with vanilla cream glaze.</p>
+            <div class="meta">
+                <span class="price">R28</span>
+                <button class="order-btn order-btn-js">Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Blueberry Muffin -->
+    <div class="card">
+        <img src="https://images.pexels.com/photos/18955551/pexels-photo-18955551.jpeg" alt="Blueberry Muffin">
+        <div class="card-body">
+            <h3>Blueberry Muffin</h3>
+            <p>Soft and fluffy muffin packed with juicy blueberries.</p>
+            <div class="meta">
+                <span class="price">R20</span>
+                <button class="order-btn order-btn-js">Order</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    </section>
+  </main>
+
+
+  <!-- order modal (reused) -->
+  <div class="modal-backdrop" id="orderBackdrop2" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="orderTitle2">
+      <div class="modal-head">
+        <h3 id="orderTitle2">Order Pastry</h3>
+        <button class="close-btn close-modal" aria-label="Close">✕</button>
+      </div>
+
+      <form id="orderForm" class="mt-6" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="small">Full name</label>
+            <input id="order_name" class="input" type="text" required />
+          </div>
+          <div class="form-field">
+            <label class="small">Email</label>
+            <input id="order_email" class="input" type="email" required />
+          </div>
+        </div>
+
+        <div class="form-row mt-6">
+          <div class="form-field">
+            <label class="small">Phone</label>
+            <input id="order_phone" class="input" type="tel" placeholder="+27 71 000 0000" required />
+          </div>
+          <div class="form-field">
+            <label class="small">Quantity</label>
+            <input id="order_qty" class="input" type="number" min="1" value="1" required />
+          </div>
+        </div>
+
+        <div class="form-row mt-6">
+          <div class="form-field" style="flex:1">
+            <label class="small">Pastry</label>
+            <input id="order_pastry" class="input" type="text" readonly />
+          </div>
+          <div class="form-field" style="flex:1">
+            <label class="small">Pickup / delivery</label>
+            <select id="order_type" class="input">
+              <option>Collect</option>
+              <option>Delivery</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label class="small">Notes (optional)</label>
+          <textarea id="order_notes"></textarea>
+        </div>
+
+        <div id="orderFeedback" class="small mt-6" style="display:none"></div>
+
+        <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px">
+          <button type="button" class="order-btn close-modal">Cancel</button>
+          <button aria-label="Submit order" class="cta" type="submit">Place order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h3>🍰 Pancake Pastries</h3>
+            <p>Your favourite place for fresh pastries, cakes, and delightful treats made daily with love.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fa fa-info-circle"></i> About Us</a></li>
+                <li><a href="products_services.html"><i class="fa fa-birthday-cake"></i> Pastries</a></li>
+                <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+                <li><a href="#" class="order-btn-js"><i class="fa fa-shopping-cart"></i> Order Now</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Contact Info</h4>
+            <p><i class="fa fa-map-marker"></i> 123 Bakery Street, Johannesburg</p>
+            <p><i class="fa fa-phone"></i> +27 65 123 4567</p>
+            <p><i class="fa fa-envelope"></i> Order@pancakepastries.co.za</p>
+
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Pancake Pastries — All Rights Reserved.</p>
+    </div>
+</footer>
+
+  <script src="scripts.js"></script>
+  <script>document.getElementById('year2').innerText=new Date().getFullYear();</script>
+</body>
+</html>
