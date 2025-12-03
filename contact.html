@@ -23,22 +23,22 @@
 
       <div class="contact-grid mt-6">
         <div>
-          <form id="contactForm" novalidate>
+          <form id="contactForm"validate>
             <div class="form-row">
               <div class="form-field">
-                <label class="small">Full name</label>
+                <label class="small">Full name</label> 
                 <input id="contact_name" class="input" type="text" required />
               </div>
               <div class="form-field">
                 <label class="small">Email</label>
-                <input id="contact_email" class="input" type="email" required />
+                <input id="contact_email" class="input" type="email" ("required") />
               </div>
             </div>
 
             <div class="form-row mt-6">
               <div class="form-field">
                 <label class="small">Phone</label>
-                <input id="contact_phone" class="input" type="tel" />
+                <input id="contact_phone" class="input" type="tel" /> ("Number must be filled out");
               </div>
               <div class="form-field">
                 <label class="small">Subject</label>
@@ -120,12 +120,13 @@
     </div> 
     
 </footer>
-
-
+  <!--Automatic Date-->
+  <div id="date"></div>
   <script src="scripts.js"></script>
   <script>document.getElementById('year4').innerText=new Date().getFullYear();</script>
 </body>
 </html>
+
 
 
 
