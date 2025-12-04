@@ -13,7 +13,7 @@
   <header class="container header">
     <a class="brand" href="index.html"><div class="logo">SP</div><div><div style="font-weight:800">Pancake Pastries</div><div style="font-size:12px;color:var(--muted)">artisan bakery</div></div></a>
     <nav class="nav"><a href="index.html">Home</a><a href="products_services.html">Pastries</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
-     
+    
   </header>
 
   <main class="container">
@@ -23,22 +23,22 @@
 
       <div class="contact-grid mt-6">
         <div>
-          <form id="contactForm"validate>
+          <form id="contactForm" novalidate>
             <div class="form-row">
               <div class="form-field">
-                <label class="small">Full name</label> 
+                <label class="small">Full name</label>
                 <input id="contact_name" class="input" type="text" required />
               </div>
               <div class="form-field">
                 <label class="small">Email</label>
-                <input id="contact_email" class="input" type="email" ("required") />
+                <input id="contact_email" class="input" type="email" required />
               </div>
             </div>
 
             <div class="form-row mt-6">
               <div class="form-field">
                 <label class="small">Phone</label>
-                <input id="contact_phone" class="input" type="tel" /> ("Number must be filled out");
+                <input id="contact_phone" class="input" type="tel" />
               </div>
               <div class="form-field">
                 <label class="small">Subject</label>
@@ -88,11 +88,12 @@
             <h3>🍰 Pancake Pastries</h3>
             <p>Your favourite place for fresh pastries, cakes, and delightful treats made daily with love.</p>
               <!-- Date & Time -->
-             <div class="footer-section">
-                <h3>Current Date & Time</h3>
-                 <p id="currentDateTime"></p>
-            </div>
-        </div>
+             
+                <div class="footer-section">
+                    <h3>Current Date & Time</h3>
+                    <p id="currentDateTime"></p>
+                </div>      
+          </div>
 
         <div class="footer-links">
             <h4>Quick Links</h4>
@@ -122,19 +123,11 @@
 
     <div class="footer-bottom">
         <p>© 2025 Pancake Pastries — All Rights Reserved.</p>
-    </div> 
-    
+    </div>
 </footer>
-  <!--Automatic Date-->
-  <div id="date"></div>
+
+
   <script src="scripts.js"></script>
   <script>document.getElementById('year4').innerText=new Date().getFullYear();</script>
 </body>
 </html>
-
-
-
-
-
-
-
