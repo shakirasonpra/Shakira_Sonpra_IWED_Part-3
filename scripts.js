@@ -111,3 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+//date and time 
+function updateFooterDateTime() {
+        const now = new Date();
+        const date = now.toLocaleDateString('en-ZA');
+        const time = now.toLocaleTimeString('en-ZA');
+        document.getElementById("currentDateTime").innerHTML = `${date} | ${time}`;
+    }
+
+    setInterval(updateFooterDateTime, 1000);
+    updateFooterDateTime();
+
