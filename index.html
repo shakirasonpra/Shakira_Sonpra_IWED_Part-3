@@ -32,6 +32,26 @@
     "logo":"https://images.unsplash.com/photo-1551024709-8f23befc6b7e?w=800",
     "sameAs":[]
   }
+  
+  function updateDateTime() {
+    const now = new Date();
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    };
+
+    document.getElementById("dateTime").innerHTML = now.toLocaleString("en-US", options);
+  }
+
+  setInterval(updateDateTime, 1000); // Update every second
+  updateDateTime(); // Initial load
+
+
   </script>
 </head>
 <body>
@@ -208,6 +228,7 @@
         <div class="footer-about">
             <h3>🍰 Pancake Pastries</h3>
             <p>Your favourite place for fresh pastries, cakes, and delightful treats made daily with love.</p>
+           <p id="dateTime" style="text-align:center; margin: 0; padding: 10px 0;"></p>
         </div>
 
         <div class="footer-links">
@@ -245,6 +266,7 @@
   <script>document.getElementById('year').innerText=new Date().getFullYear();</script>
 </body>
 </html>
+
 
 
 
