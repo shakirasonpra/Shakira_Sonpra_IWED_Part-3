@@ -81,36 +81,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact form validation
-  const contactForm = document.getElementById('contactForm');
-  if(contactForm){
-    contactForm.addEventListener('submit', ev => {
-      ev.preventDefault();
-      const name = document.getElementById('contact_name').value;
-      const email = document.getElementById('contact_email').value;
-      const msg = document.getElementById('contact_message').value;
-      const phone = document.getElementById('contact_phone').value;
-      const fdbk = document.getElementById('contactFeedback');
+//contact form validation
 
-      let errs = [];
-      if(!isNotEmpty(name)) errs.push('Name is required.');
-      if(!isValidEmail(email)) errs.push('Valid email required.');
-      if(!isNotEmpty(msg) || msg.trim().length < 10) errs.push('Message must be at least 10 characters.');
-      if(phone && phone.replace(/\D/g,'').length < 10) errs.push('Phone looks too short.');
 
-      if(errs.length){
-        fdbk.style.display='block'; fdbk.style.color='crimson';
-        fdbk.innerHTML = '<strong>Errors:</strong><br>' + errs.map(e => `• ${e}`).join('<br>');
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop form from submitting
+    
+    // get values
+    const name = document.getElementById("contact_name").value.trim();
+    const email = document.getElementById("contact_email").value.trim();
+    const phone = document.getElementById("contact_phone").value.trim();
+    const subject = document.getElementById("contactFeedback").value.trim();
+    const message = document.getElementById("contact_message").value.trim();
+
+    const error = document.getElementById("formError");
+    const success = document.getElementById("formSuccess");
+
+    error.innerHTML = "";
+    success.innerHTML = "";
+
+    // regex patterns
+    const namePattern = /^[A-Za-z\s]+$/;
+    const phonePattern = /^[0-9]{10,12}$/;
+    const subjectPattern = /^[A-Za-z0-9\s]+$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // name validation
+    if (!namePattern.test(name)) {
+        error.innerHTML = "Please enter a valid name (letters only).";
         return;
-      }
+    }
 
-      fdbk.style.display='block'; fdbk.style.color='green';
-      fdbk.innerHTML = 'Thanks — we received your message and will reply shortly.';
-      contactForm.reset();
-    });
-  }
+    // email validation
+    if (!emailPattern.test(email)) {
+        error.innerHTML = "Please enter a valid email address.";
+        return;
+    }
 
+    // phone number validation
+    if (!phonePattern.test(phone)) {
+        error.innerHTML = "Cellphone number must be 10–12 digits.";
+        return;
+    }
+
+    // subject validation
+    if (!subjectPattern.test(subject)) {
+        error.innerHTML = "Subject may only include letters, numbers and spaces.";
+        return;
+    }
+
+    // message validation
+    if (message.length < 10) {
+        error.innerHTML = "Message must be at least 10 characters long.";
+        return;
+    }
+
+    // SUCCESS
+    success.innerHTML = "Form submitted successfully!";
+
+  
 });
+
+
 //date and time 
 function updateFooterDateTime() {
         const now = new Date();
@@ -121,4 +153,5 @@ function updateFooterDateTime() {
 
     setInterval(updateFooterDateTime, 1000);
     updateFooterDateTime();
+
 
